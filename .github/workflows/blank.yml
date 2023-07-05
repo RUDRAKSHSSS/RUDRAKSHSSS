@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Game</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <script>
+    // Get the canvas element
+    var canvas = document.getElementById("gameCanvas");
+    var context = canvas.getContext("2d");
+
+    // Set up the game loop
+    var lastUpdateTime = 0;
+    function gameLoop(timestamp) {
+      var deltaTime = timestamp - lastUpdateTime;
+
+      //
+      Update game logic
+      update(deltaTime);
+
+      // Render game
+      render();
+
+      lastUpdateTime = timestamp;
+      window.requestAnimationFrame(gameLoop);
+    }
+
+    // Update game logic
+    function update(deltaTime) {
+      // Update game objects, handle input, etc.
+    }
+
+    // Render the game
+    function render() {
+      // Clear the canvas
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw game objects, sprites, etc.
+    }
+
+    // Start the game loop
+    window.requestAnimationFrame(gameLoop);
+  </script>
+</body>
+</html>
